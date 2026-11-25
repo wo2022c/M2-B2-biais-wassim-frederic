@@ -24,7 +24,7 @@ def entrainer(train: pd.DataFrame, colonnes: list[str]) -> Pipeline:
                 ("encode", OneHotEncoder(handle_unknown="infrequent_if_exist", min_frequency=50)),
             ]), cat),
             ("num", Pipeline([("impute", SimpleImputer(strategy="median")), ("scale", StandardScaler())]),
-             NUMERICAL_FEATURES),
+            NUMERICAL_FEATURES),
         ],
         sparse_threshold=0,
     )
